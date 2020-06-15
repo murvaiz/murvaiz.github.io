@@ -1,0 +1,159 @@
+https://www.tutorialspoint.com/es6/
+
+"use strict";   -- 
+
+The JavaScript engine, by default, moves declarations to the top. This feature is termed as hoisting
+JavaScript is an un-typed language. This feature is termed as dynamic typing.
+Unlike the var keyword, the let keyword allows the script to restrict access to the variable to the nearest enclosing block.
+Variables declared using var do not support block level scope. This means if a variable is declared in a loop or if block it can be accessed outside the loop or the if block. 
+typeof operator It is a unary operator.
+ES6 provides a new operator called the spread operator. The spread operator is represented by three dots “...” . The spread operator converts an array into individual array elements.
+example: let student4 = {...student1,...student3}
+In ES6, a function allows the parameters to be initialized with default values, if no values are passed to it or it is undefined. function add(a, b = 1) { 
+rest parameter, the parameter name is prefixed with three periods,Rest parameters doesn’t restrict the number of values that you can pass to a function. However, the values passed must all be of the same type.
+Anonymous Function 
+var func = function(x,y){ return x*y }; 
+result = func(10,20);
+
+The Function Constructor , The function statement is not the only way to define a new function; you can define your function dynamically using Function() constructor along with the new operator.
+var func = new Function("x", "y", "return x*y;"); 
+result = func(10,20); 
+
+Anonymous Recursive Function
+
+(function() { 
+   var msg = "Hello World" 
+   console.log(msg)
+})()
+The function calls itself using a pair of parentheses ().
+
+Lambda function = Arrow function
+var disp = ()=>console.log("Hello World") 
+disp();
+
+Unlike variables, function declarations when hoisted, hoists the function definition rather than just hoisting the function’s name.
+
+Immediately Invoked Function Expression
+Immediately Invoked Function Expressions (IIFEs) can be used to avoid variable hoisting from within blocks. It allows public access to methods while retaining privacy for variables defined within the function.
+var main = function() { 
+   var loop = function() { 
+      for(var x = 0;x<5;x++) {
+         console.log(x); 
+      } 
+   }(); 
+   console.log("x can not be accessed outside the block scope x value is :"+x); 
+} 
+main();
+
+Generator Functions
+When a normal function is invoked, the control rests with the function called until it returns. With generators in ES6, the caller function can now control the execution of a called function.
+When you call a generator, it doesn’t run right away. Instead, you get back an iterator. The function runs as you call the iterator’s next method.
+function* ask() { 
+   const name = yield "What is your name?"; 
+   const sport = yield "What is your favorite sport?"; 
+   return `${name}'s favorite sport is ${sport}`; 
+}  
+const it = ask(); 
+console.log(it.next()); 
+
+The simplest way to create a cookie is to assign a string value to the document.cookie object,
+"document.cookie = "key1 = value1; key2 = value2; expires = date";
+
+window.location and window.location.href
+window.location.replace("http://www.abc.com
+location.reload()
+
+alert, confirm, propt - dialog boxes
+
+Object
+var myCar = new Object(); 
+myCar.make = "Ford";
+
+The term destructuring refers to breaking up the structure of an entity. let {name,cgpa} = student
+
+Template literals are string literals that allow embedded expressions.
+
+String.raw enables us to write the backslash as we would in a regular expression literal. 
+var raw_text = String.raw`Hello \n World `       Hello \n World
+
+A tag is a function which can interpret and process a template literal. 
+
+var pattern = new RegExp(pattern, attributes); 
+
+[Symbol.iterator]() can be used to retrieve an iterator object. The next() method of the iterator returns an object with 'value' and 'done' properties . 'done' is Boolean and returns true after reading all items in the collection.
+let marks = [10,20,30]
+   let iter = marks[Symbol.iterator]();
+   console.log(iter.next())
+
+Classes
+class Polygond {
+ constructor() {}
+test() {} }
+
+getter setter
+inheritance class a extends b
+
+ES6 enables a child class to invoke its parent class data member. This is achieved by using the super keyword. super.doPrint() 
+
+A map is an ordered collection of key-value pairs. (keys are ordered and iterable)
+let daysMap = new Map();
+   daysMap.set('1', 'Monday');
+has size
+
+WeakMap is a small subset of map. Keys are weakly referenced, so it can be non-primitive only. If there are no reference to the object keys, it will be subject to garbage collection.
+not iterable
+
+Promisses
+function add_positivenos_async(n1, n2) {
+	let p = new Promise(function (resolve, reject) {
+         if (n1 >= 0 && n2 >= 0) {
+            //do some complex time consuming work
+            resolve(n1 + n2)
+         }
+         else
+            reject('NOT_Postive_Number_Passed') 
+         })
+return p;
+   }
+add_positivenos_async(10, 20)
+      .then(successHandler) // if promise resolved
+      .catch(errorHandler);// if promise rejected
+
+promisse chaining
+promise.all
+
+Modules
+reusing a part of the code
+export default company
+in the other js import c from './company1.js'
+and in the html <script src="./company2.js" type="module"></script>
+
+Error handling
+window.onerror  =  function () {  
+
+The onerror event handler provides three pieces of information to identify the exact nature of the error -
+Error message - The same message that the browser would display for the given error.
+URL - The file in which the error occurred.
+Line number - The line number in the given URL that caused the error.
+window.onerror  =  function (msg, url, line) {  
+
+<script LANGUAGE = "JavaScript" type = "text/javascript"> 
+
+You can use the alert() or document.write() methods in your program to debug your code. 
+
+node debug test.js
+debugger;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
